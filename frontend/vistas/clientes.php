@@ -468,10 +468,12 @@
         </div>
         <div class="modal-body">
           <form>
+            <input type="hidden" id="id">
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
               <div class="col-sm-12 col-md-10">
                 <input
+                id="nombre" name="nombre"
                   class="form-control"
                   type="text"
                   placeholder="Johnny Brown" />
@@ -480,7 +482,7 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Apellido</label>
               <div class="col-sm-12 col-md-10">
-                <input
+                <input id="apellido" name="apellido"
                   class="form-control"
                   placeholder="Search Here"
                   type="search" />
@@ -489,7 +491,7 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
               <div class="col-sm-12 col-md-10">
-                <input
+                <input id="telefono" name="telefono"
                   class="form-control"
                   value="bootstrap@example.com"
                   type="email" />
@@ -498,7 +500,7 @@
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Correo</label>
               <div class="col-sm-12 col-md-10">
-                <input
+                <input id="email" name="email"
                   class="form-control"
                   value="bootstrap@example.com"
                   type="email" />

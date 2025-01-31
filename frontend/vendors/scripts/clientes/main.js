@@ -1,26 +1,24 @@
 /* Variables */
-const tablaClientes = document.querySelector("#tabClientes")
-tablaClientes.addEventListener("click", (e)=>{
+const tablaClientes = document.querySelector("#tabClientes");
+tablaClientes.addEventListener("click", (e) => {
+  let editar = e.target.closest(".editar");
+  let eliminar = e.target.closest(".eliminar");
 
-  let editar = e.target.closest(".editar")
-  let eliminar = e.target.closest(".eliminar")
+  if (editar) {
+    let row = editar.closest("tr");
+    let rowData = $("#tabClientes").DataTable().row(row).data();
 
-  if(editar){
-    console.log("contienen la clase editar")
-    
+    for (const key in rowData) {
+      if (rowData.hasOwnProperty(key)) {
+        const input = document.getElementById(key);
+
+        if (input) {
+          input.value = rowData[key];
+        }
+      }
+    }
   }
-  if(eliminar){
-    console.log("contienen la clase eliminar")
+  if (eliminar) {
+    console.log("contienen la clase eliminar");
   }
-
- 
-
-
-})
-
-
-
-
-
-
-
+});

@@ -1,6 +1,6 @@
 <?php
 
-include_once '../modelos/clientes.modelo.php';
+include_once '../modelos/venta_membresia.modelo.php';
 
 class VentaMembresiaControlador
 {
@@ -11,38 +11,43 @@ class VentaMembresiaControlador
         $this->ventaMembresia = new VentaMembresiaModelo();
     }
 
-    public function ventaMembresia($data){
-
+    public function detalleMembresias()
+    {
+        $detalles = $this->ventaMembresia->detalleMembresias();
+        echo json_encode(['data' => $detalles]);
+    }
+    
+    public function ventaMembresia($data)
+    {
+        $this->ventaMembresia->ventaMembresia($data);
+        echo json_encode(['status' => 'ok']);
     }
 }
 
-
-
-// Manejo de la solicitud HTTP
 $method = $_SERVER['REQUEST_METHOD'];
 
 $jsonData = file_get_contents('php://input');
 $data = json_decode($jsonData, true);
 
-$uri = $_GET['uri'] ?? ''; // Puedes usar una ruta específica si tu sistema la pasa como query string
+$uri = $_GET['uri'] ?? '';
 
 $controller = new VentaMembresiaControlador();
 
 switch ($method) {
 
     case 'GET':
-       /*  if ($uri === 'clientes') {
-            $controller->obtenerClientes();
+         if ($uri === 'detallesmembresias') {
+            $controller->detalleMembresias();
             break;
         }
-        if ($uri === 'clientes_act') {
+       /*  if ($uri === 'clientes_act') {
             $controller->clientesActivos();
             break;
         } */
 
     case 'POST':
 
-        if ($data['uri'] === 'vendermembresia') {
+        if ($data[0]['uri'] === 'vendermembresia') {
             $controller->ventaMembresia($data);
             break;
         }

@@ -30,6 +30,8 @@
     type="text/css"
     href="frontend/vendors/styles/icon-font.min.css" />
   <link rel="stylesheet" type="text/css" href="frontend/vendors/styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="frontend/src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css">
+  <link rel="stylesheet" type="text/css" href="frontend/src/plugins/sweetalert2/sweetalert2.css">
 
 
 </head>
@@ -355,7 +357,7 @@
           <div id="accordion">
             <div class="card">
               <div class="card-header">
-                <button
+                <button id="btnAcordion"
                   class="btn btn-block collapsed"
                   data-toggle="collapse"
                   data-target="#faq1">
@@ -365,46 +367,49 @@
               <div id="faq1" class="collapse" data-parent="#accordion">
                 <div class="card-body">
                   <div class="d-flex justify-content-end mb-3">
+
+              
                     <span
+                    data-toggle="tooltip" data-placement="top" title="" data-original-title="Registrar cliente"
                       class="icon-copy ti-save pr-3"
-                      id="nuevoCliente"></span><span
+                      id="nuevoCliente">
+                    </span>
+                      <span
+                      data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar registro"
                       class="icon-copy ti-close"
-                      id="cancelarNuevoCliente"></span>
+                      id="cancelarNuevoCliente">
+                    </span>
                   </div>
-                  <form>
+                  <form id="formClientes">
                     <div class="form-group row">
                       <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
                       <div class="col-sm-12 col-md-10">
-                        <input
+                        <input id="nombre" name="nombre"
                           class="form-control"
-                          type="text"
-                          placeholder="Johnny Brown" />
+                          type="text" />
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-sm-12 col-md-2 col-form-label">Apellido</label>
                       <div class="col-sm-12 col-md-10">
-                        <input
+                        <input id="apellido" name="apellido"
                           class="form-control"
-                          placeholder="Search Here"
-                          type="search" />
+                          type="text" />
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
                       <div class="col-sm-12 col-md-10">
-                        <input
+                        <input id="telefono" name="telefono"
                           class="form-control"
-                          value="bootstrap@example.com"
-                          type="email" />
+                          type="tel" />
                       </div>
                     </div>
                     <div class="form-group row">
                       <label class="col-sm-12 col-md-2 col-form-label">Correo</label>
                       <div class="col-sm-12 col-md-10">
-                        <input
+                        <input id="email" name="email"
                           class="form-control"
-                          value="bootstrap@example.com"
                           type="email" />
                       </div>
                     </div>
@@ -427,14 +432,14 @@
               <p class="mb-30">All bootstrap element classies</p>
             </div>
           </div>
-          <form>
+          <form id="formVentaMembresia">
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Cliente</label>
               <div class="col-sm-12 col-md-10">
                 <div class="form-group">
-                  <select id="selectClientes"
+                  <select id="id_cliente"
                     class="custom-select2 form-control"
-                    name="state"
+                    name="id_cliente"
                     style="width: 100%; height: 38px">
                   </select>
                 </div>
@@ -444,19 +449,18 @@
               <label class="col-sm-12 col-md-2 col-form-label">Membresía</label>
               <div class="col-sm-12 col-md-10">
                 <div class="form-group">
-                  <select id="selectMembresias"
+                  <select id="id_membresia"
                     class="custom-select2 form-control"
-                    name="state"
+                    name="id_membresia"
                     style="width: 100%; height: 38px">
 
                   </select>
                 </div>
               </div>
             </div>
-
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Descuento</label>
-              <div class="col-sm-12 col-md-10 input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input id="demo1" type="text" value="0" name="demo1" class="form-control"><span class="input-group-addon bootstrap-touchspin-postfix input-group-append"><span class="input-group-text">%</span></span><span class="input-group-btn input-group-append"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span></div>
+              <div class="col-sm-12 col-md-10"><input id="descuento" type="text" value="0" name="descuento" class="form-control"><span class="input-group-addon bootstrap-touchspin-postfix input-group-append"></span></div>
             </div>
           </form>
         </div>
@@ -469,8 +473,12 @@
   <script src="frontend/vendors/scripts/script.min.js"></script>
   <script src="frontend/vendors/scripts/process.js"></script>
   <script src="frontend/vendors/scripts/layout-settings.js"></script>
+  <script src="frontend/src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+  <script src="frontend/vendors/scripts/advanced-components.js"></script>
 
   <!-- Personalizado -->
+  <script src="frontend/src/scripts/moment.js"></script>
+  <script src="frontend/src/plugins/sweetalert2/sweetalert2.all.js"></script>
   <script src="frontend/vendors/scripts/venta_membresia/main.js"></script>
 </body>
 

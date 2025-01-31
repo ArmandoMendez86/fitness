@@ -10,11 +10,11 @@
 			// verticalupclass: 'fa fa-plus',
 			// verticaldownclass: 'fa fa-minus'
 		});
-		$("input[name='demo3']").TouchSpin();
-		$("input[name='demo1']").TouchSpin({
+		$("input[name='descuento']").TouchSpin();
+		$("input[name='descuento']").TouchSpin({
 			min: 0,
 			max: 100,
-			step: 0.1,
+			step: 1,
 			decimals: 2,
 			boostat: 5,
 			maxboostedstep: 10,

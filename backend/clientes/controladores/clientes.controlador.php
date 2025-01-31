@@ -17,24 +17,30 @@ class ClientesControlador
         echo json_encode(['data' => $clientes]);
     }
 
-    public function create($data)
+    public function verificarCliente($data)
     {
-        $this->clientes->create($data['nombre'], $data['correo'], $data['telefono'], $data['estado']);
+        $clientes = $this->clientes->verificarCliente($data);
+        echo json_encode(['data' => $clientes]);
+    }
+
+    public function crearCliente($data)
+    {
+        $this->clientes->crearCliente($data);
         echo json_encode(['status' => 'ok']);
     }
 
    
-    public function clientesActivos()
+ /*    public function clientesActivos()
     {
         $clientesActivos = $this->clientes->clientesActivos();
         echo json_encode(['data' => $clientesActivos]);
-    }
+    } */
 
-    public function update($data)
+  /*   public function update($data)
     {
         $this->clientes->update($data['id'], $data['nombre'], $data['correo'], $data['telefono'], $data['estado']);
         echo json_encode(['status' => 'ok']);
-    }
+    } */
 
     public function delete($id)
     {
@@ -62,30 +68,34 @@ switch ($method) {
             $controller->obtenerClientes();
             break;
         }
-        if ($uri === 'clientes_act') {
+      /*   if ($uri === 'clientes_act') {
             $controller->clientesActivos();
             break;
-        }
+        } */
 
     case 'POST':
-        if ($data['uri'] === 'clientes' && isset($data['id'])) {
+      /*   if ($data[0]['uri'] === 'actualizarcliente') {
             unset($data['uri']);
             $controller->update($data);
             break;
-        }
+        } */
 
-        if ($data['uri'] === 'clientes' && !isset($data['id'])) {
-            unset($data['uri']);
-            $controller->create($data);
+        if ($data[0]['uri'] === 'crearcliente' ) {
+            $controller->crearCliente($data);
             break;
         }
 
-        if ($data['uri'] === 'eliminar' && isset($data['id'])) {
+        if ($data[0]['uri'] === 'verificarcliente' ) {
+            $controller->verificarCliente($data);
+            break;
+        }
+
+       /*  if ($data['uri'] === 'eliminar' && isset($data['id'])) {
             unset($data['uri']);
             $id = $data['id'];
             $controller->delete($id);
             break;
-        }
+        } */
 
         // Si no se cumple ninguna de las anteriores, error
         http_response_code(400);

@@ -93,6 +93,99 @@ $("document").ready(function () {
     ],
   });
 
+  $("#tabDetalleMembresias").DataTable({
+    scrollCollapse: true,
+    autoWidth: false,
+    responsive: true,
+    columnDefs: [
+      {
+        targets: "datatable-nosort",
+        orderable: false,
+      },
+    ],
+    dom: "Bfrtp",
+    buttons: ["copy", "csv", "pdf", "print"],
+    ajax: {
+      url: "backend/venta_membresias/controladores/venta_membresia.controlador.php?uri=detallesmembresias",
+      type: "GET",
+      dataType: "json",
+    },
+    language: {
+      url: "frontend/vendors/scripts/mx.json",
+    },
+    lengthMenu: [
+      [10, 15, 20, -1],
+      [10, 15, 20, "Todos"],
+    ],
+    /* order: [[7, "desc"]], */
+    columns: [
+      {
+        data: "id",
+        visible: false,
+      },
+      {
+        data: "nombre",
+        visible: true,
+      },
+      {
+        data: "apellido",
+      },
+      {
+        data: "email",
+      },
+      {
+        data: "telefono",
+      },
+      {
+        data: "tipo",
+      },
+      {
+        data: "fecha_inicio",
+        render: function (data, type, row) {
+          if (type == "display") {
+            return moment(data).format("DD/MM/YY hh:mm A");
+          }
+          return data;
+        },
+      },
+      {
+        data: "fecha_fin",
+        render: function (data, type, row) {
+          if (type == "display") {
+            return moment(data).format("DD/MM/YY hh:mm A");
+          }
+          return data;
+        },
+      },
+      {
+        data: "precio",
+      },
+    ],
+    footerCallback: function (row, data, start, end, display) {
+      let api = this.api();
+  
+      let total = api
+        .column(8, { page: "current" })
+        .data()
+        .reduce(function (a, b) {
+          // Convertir a número, o usar 0 si no es un número
+          const valorA = parseFloat(a) || 0;
+          const valorB = parseFloat(b) || 0;
+          return valorA + valorB;
+        }, 0);
+  
+      let formato = total.toLocaleString("es-MX", {
+        style: "currency",
+        currency: "MXN",
+      });
+      $(api.column(8).footer()).html(
+        "<p style='width:7rem;margin:0 auto;font-size:1rem;'>" +
+          formato +
+          "</p>"
+      );
+    },
+  });
+
   var table = $(".select-row").DataTable();
   $(".select-row tbody").on("click", "tr", function () {
     if ($(this).hasClass("selected")) {

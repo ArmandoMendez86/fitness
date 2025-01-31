@@ -364,116 +364,35 @@
 
           </div>
           <div class="pb-20">
-            <table
-              class="table hover multiple-select-row data-table-export nowrap">
-              <thead>
+            <table id="tabDetalleMembresias"
+              class="table hover">
+              <thead class="text-center text-uppercase">
                 <tr>
-                  <th class="table-plus datatable-nosort">Name</th>
-                  <th>Age</th>
-                  <th>Office</th>
-                  <th>Address</th>
-                  <th>Start Date</th>
-                  <th>Salart</th>
+                  <th>id</th>
+                  <th>nombre</th>
+                  <th>apellido</th>
+                  <th>email</th>
+                  <th>telefono</th>
+                  <th>tipo</th>
+                  <th>inicio</th>
+                  <th>fin</th>
+                  <th>precio</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody></tbody>
+              <tfoot>
                 <tr>
-                  <td class="table-plus">Gloria F. Mead</td>
-                  <td>25</td>
-                  <td>Sagittarius</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th class="bg-dark text-center text-white"></th>
                 </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>20</td>
-                  <td>Gemini</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>25</td>
-                  <td>Gemini</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>20</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>18</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-              </tbody>
+              </tfoot>
             </table>
           </div>
         </div>
@@ -502,6 +421,11 @@
   <script src="frontend/src/plugins/datatables/js/vfs_fonts.js"></script>
   <!-- Datatable Setting js -->
   <script src="frontend/vendors/scripts/datatable-setting.js"></script>
+
+  <!-- Personalizado -->
+  <script src="frontend/src/scripts/moment.js"></script>
+  <script src="frontend/src/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <script src="frontend/vendors/scripts/detalle_membresias/main.js"></script>
 
 </body>
 

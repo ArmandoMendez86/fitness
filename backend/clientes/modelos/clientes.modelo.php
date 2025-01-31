@@ -17,27 +17,41 @@ class ClientesModelo
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create($nombre, $correo, $telefono, $estado)
+    public function verificarCliente($data)
+
     {
-        $sql = "INSERT INTO clientes (nombre, correo, telefono, estado) VALUES (:nombre, :correo, :telefono, :estado)";
+        $email = $data[0]['email'];
+        $telefono = $data[0]['telefono'];
+
+        $sql = "SELECT * FROM clientes WHERE email = '$email' OR  telefono = '$telefono'";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function crearCliente($data)
+    {
+        $sql = "INSERT INTO clientes (nombre, apellido, email, telefono) VALUES (:nombre, :apellido, :email, :telefono)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            ':nombre' => $nombre,
-            ':correo' => $correo,
-            ':telefono' => $telefono,
-            ':estado' => $estado
-        ]);
+
+        foreach ($data as $registro) {
+            $stmt->execute([
+                ':nombre' => $registro['nombre'],
+                ':apellido' => $registro['apellido'],
+                ':email' => $registro['email'],
+                ':telefono' => $registro['telefono'],
+            ]);
+        }
     }
 
 
 
 
-    public function clientesActivos()
+    /*     public function clientesActivos()
     {
         $sql = "SELECT * FROM clientes WHERE estado = 1";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    } */
 
 
     public function update($id, $nombre, $correo, $telefono, $estado)
