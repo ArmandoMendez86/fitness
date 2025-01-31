@@ -1,0 +1,16 @@
+# Activa el motor de reescritura
+RewriteEngine On
+
+# Si la solicitud es un archivo existente o un directorio, no redirigir
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirige todas las demás solicitudes a index.php
+RewriteRule ^(.*)$ index.php [L]
+
+# Opcional: Configurar cabeceras de no-caché (si es necesario para evitar caché)
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>

@@ -11,7 +11,7 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../vendors/images/logo.jpg"
+      href="frontend/vendors/images/logo.jpg"
     />
 
     <!-- Mobile Specific Metas -->
@@ -26,71 +26,28 @@
       rel="stylesheet"
     />
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../vendors/styles/core.css" />
+    <link rel="stylesheet" type="text/css" href="frontend/vendors/styles/core.css" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../vendors/styles/icon-font.min.css"
+      href="frontend/vendors/styles/icon-font.min.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+      href="frontend/src/plugins/datatables/css/dataTables.bootstrap4.min.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../src/plugins/datatables/css/responsive.bootstrap4.min.css"
+      href="frontend/src/plugins/datatables/css/responsive.bootstrap4.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="../vendors/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="frontend/vendors/styles/style.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
-    ></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-GBZ3SGGX85");
-    </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
-    <div class="pre-loader">
-      <div class="pre-loader-box">
-        <div class="loader-logo">
-          <img src="../vendors/images/logo.jpg" width="150" alt="" />
-        </div>
-        <div class="loader-progress" id="progress_div">
-          <div class="bar" id="bar1"></div>
-        </div>
-        <div class="percent" id="percent1">0%</div>
-        <div class="loading-text">Loading...</div>
-      </div>
-    </div>
+   
+  <?php include_once "frontend/templates/loader.php" ?>
 
     <div class="header">
       <div class="header-left">
@@ -186,7 +143,7 @@
                 <ul>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/img.jpg" alt="" />
+                      <img src="frontend/vendors/images/img.jpg" alt="" />
                       <h3>John Doe</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -196,7 +153,7 @@
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/photo1.jpg" alt="" />
+                      <img src="frontend/vendors/images/photo1.jpg" alt="" />
                       <h3>Lea R. Frith</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -206,7 +163,7 @@
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/photo2.jpg" alt="" />
+                      <img src="frontend/vendors/images/photo2.jpg" alt="" />
                       <h3>Erik L. Richards</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -216,7 +173,7 @@
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/photo3.jpg" alt="" />
+                      <img src="frontend/vendors/images/photo3.jpg" alt="" />
                       <h3>John Doe</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -226,7 +183,7 @@
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/photo4.jpg" alt="" />
+                      <img src="frontend/vendors/images/photo4.jpg" alt="" />
                       <h3>Renee I. Hansen</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -236,7 +193,7 @@
                   </li>
                   <li>
                     <a href="#">
-                      <img src="../vendors/images/img.jpg" alt="" />
+                      <img src="frontend/vendors/images/img.jpg" alt="" />
                       <h3>Vicki M. Coleman</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -258,7 +215,7 @@
               data-toggle="dropdown"
             >
               <span class="user-icon">
-                <img src="../vendors/images/photo1.jpg" alt="" />
+                <img src="frontend/vendors/images/photo1.jpg" alt="" />
               </span>
               <span class="user-name">Ross C. Lopez</span>
             </a>
@@ -282,7 +239,7 @@
         </div>
         <div class="github-link">
           <a href="https://github.com/dropways/deskapp" target="_blank"
-            ><img src="../vendors/images/github.svg" alt=""
+            ><img src="frontend/vendors/images/github.svg" alt=""
           /></a>
         </div>
       </div>
@@ -458,46 +415,10 @@
       </div>
     </div>
 
-    <div class="left-side-bar">
-      <div class="brand-logo">
-        <a href="#!" class="justify-content-center">
-          <img src="../vendors/images/logo.jpg" width="70" />
-        </a>
-        <div class="close-sidebar" data-toggle="left-sidebar-close">
-          <i class="ion-close-round"></i>
-        </div>
-      </div>
-      <div class="menu-block customscroll">
-        <div class="sidebar-menu">
-          <ul id="accordion-menu">
-            <li class="dropdown">
-              <a href="javascript:;" class="dropdown-toggle">
-                <span class="micon bi bi-table"></span>
-                <span class="mtext">Administración</span>
-              </a>
-              <ul class="submenu">
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="membresias.html">Membresías</a></li>
-                <li><a href="usuarios.html">Usuarios</a></li>
-                <li><a href="configuracion.html">Configuración</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="servicios.html" class="dropdown-toggle no-arrow">
-                <span class="micon bi bi-diagram-3"></span
-                ><span class="mtext">Membresías</span>
-              </a>
-            </li>
-            <li>
-              <a href="detalle_servicios.html" class="dropdown-toggle no-arrow">
-                <span class="micon bi bi-calendar4-week"></span
-                ><span class="mtext">Registro Membresías</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+   
+    <?php include_once "frontend/templates/leftsidebar.php" ?>
+
+
     <div class="mobile-menu-overlay"></div>
 
     <div class="main-container">
@@ -703,23 +624,26 @@
     </div>
    
     <!-- js -->
-    <script src="../vendors/scripts/core.js"></script>
-    <script src="../vendors/scripts/script.min.js"></script>
-    <script src="../vendors/scripts/process.js"></script>
-    <script src="../vendors/scripts/layout-settings.js"></script>
-    <script src="../src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-    <script src="../src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="frontend/vendors/scripts/core.js"></script>
+    <script src="frontend/vendors/scripts/script.min.js"></script>
+    <script src="frontend/vendors/scripts/process.js"></script>
+    <script src="frontend/vendors/scripts/layout-settings.js"></script>
+    <script src="frontend/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
     <!-- buttons for Export datatable -->
-    <script src="../src/plugins/datatables/js/dataTables.buttons.min.js"></script>
-    <script src="../src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
-    <script src="../src/plugins/datatables/js/buttons.print.min.js"></script>
-    <script src="../src/plugins/datatables/js/buttons.html5.min.js"></script>
-    <script src="../src/plugins/datatables/js/buttons.flash.min.js"></script>
-    <script src="../src/plugins/datatables/js/pdfmake.min.js"></script>
-    <script src="../src/plugins/datatables/js/vfs_fonts.js"></script>
+    <script src="frontend/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/buttons.print.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/buttons.html5.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/buttons.flash.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/pdfmake.min.js"></script>
+    <script src="frontend/src/plugins/datatables/js/vfs_fonts.js"></script>
     <!-- Datatable Setting js -->
-    <script src="../vendors/scripts/datatable-setting.js"></script>
+    <script src="frontend/vendors/scripts/datatable-setting.js"></script>
+
+    <!-- Personalizado -->
+    <script src="frontend/vendors/scripts/clientes/main.js"></script>
   </body>
 </html>
