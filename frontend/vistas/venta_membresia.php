@@ -382,12 +382,21 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
+                      <label class="col-sm-12 col-md-2 col-form-label">Apellido</label>
                       <div class="col-sm-12 col-md-10">
                         <input
                           class="form-control"
                           placeholder="Search Here"
                           type="search" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
+                      <div class="col-sm-12 col-md-10">
+                        <input
+                          class="form-control"
+                          value="bootstrap@example.com"
+                          type="email" />
                       </div>
                     </div>
                     <div class="form-group row">
@@ -423,64 +432,23 @@
               <label class="col-sm-12 col-md-2 col-form-label">Cliente</label>
               <div class="col-sm-12 col-md-10">
                 <div class="form-group">
-                  <select
+                  <select id="selectClientes"
                     class="custom-select2 form-control"
                     name="state"
                     style="width: 100%; height: 38px">
-                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                      <option value="AK">Alaska</option>
-                      <option value="HI">Hawaii</option>
-                    </optgroup>
-                    <optgroup label="Pacific Time Zone">
-                      <option value="CA">California</option>
-                      <option value="NV">Nevada</option>
-                      <option value="OR">Oregon</option>
-                      <option value="WA">Washington</option>
-                    </optgroup>
-                    <optgroup label="Mountain Time Zone">
-                      <option value="AZ">Arizona</option>
-                      <option value="CO">Colorado</option>
-                      <option value="ID">Idaho</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="UT">Utah</option>
-                      <option value="WY">Wyoming</option>
-                    </optgroup>
                   </select>
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-12 col-md-2 col-form-label">Servicio</label>
+              <label class="col-sm-12 col-md-2 col-form-label">Membresía</label>
               <div class="col-sm-12 col-md-10">
                 <div class="form-group">
-                  <select
+                  <select id="selectMembresias"
                     class="custom-select2 form-control"
                     name="state"
                     style="width: 100%; height: 38px">
-                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                      <option value="AK">Alaska</option>
-                      <option value="HI">Hawaii</option>
-                    </optgroup>
-                    <optgroup label="Pacific Time Zone">
-                      <option value="CA">California</option>
-                      <option value="NV">Nevada</option>
-                      <option value="OR">Oregon</option>
-                      <option value="WA">Washington</option>
-                    </optgroup>
-                    <optgroup label="Mountain Time Zone">
-                      <option value="AZ">Arizona</option>
-                      <option value="CO">Colorado</option>
-                      <option value="ID">Idaho</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="UT">Utah</option>
-                      <option value="WY">Wyoming</option>
-                    </optgroup>
+
                   </select>
                 </div>
               </div>
@@ -488,12 +456,7 @@
 
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Descuento</label>
-              <div class="col-sm-12 col-md-10">
-                <input
-                  class="form-control"
-                  value="bootstrap@example.com"
-                  type="email" />
-              </div>
+              <div class="col-sm-12 col-md-10 input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input id="demo1" type="text" value="0" name="demo1" class="form-control"><span class="input-group-addon bootstrap-touchspin-postfix input-group-append"><span class="input-group-text">%</span></span><span class="input-group-btn input-group-append"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span></div>
             </div>
           </form>
         </div>
@@ -506,6 +469,9 @@
   <script src="frontend/vendors/scripts/script.min.js"></script>
   <script src="frontend/vendors/scripts/process.js"></script>
   <script src="frontend/vendors/scripts/layout-settings.js"></script>
+
+  <!-- Personalizado -->
+  <script src="frontend/vendors/scripts/venta_membresia/main.js"></script>
 </body>
 
 </html>
