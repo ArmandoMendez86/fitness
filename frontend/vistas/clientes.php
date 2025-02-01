@@ -362,75 +362,18 @@
         <div class="footer-wrap pd-20 mb-20 card-box">
           Gestiona tus Clientes
         </div>
-        <div class="faq-wrap">
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header">
-                <button
-                  class="btn btn-block collapsed"
-                  data-toggle="collapse"
-                  data-target="#faq1">
-                  Agregar cliente
-                </button>
-              </div>
-              <div id="faq1" class="collapse" data-parent="#accordion">
-                <div class="card-body">
-                  <div class="d-flex justify-content-end mb-3">
-                    <span
-                      class="icon-copy ti-save pr-3"
-                      id="nuevoCliente"></span><span
-                      class="icon-copy ti-close"
-                      id="cancelarNuevoCliente"></span>
-                  </div>
-                  <form>
-                    <div class="form-group row">
-                      <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
-                      <div class="col-sm-12 col-md-10">
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Johnny Brown" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-12 col-md-2 col-form-label">Apellido</label>
-                      <div class="col-sm-12 col-md-10">
-                        <input
-                          class="form-control"
-                          placeholder="Search Here"
-                          type="search" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
-                      <div class="col-sm-12 col-md-10">
-                        <input
-                          class="form-control"
-                          value="bootstrap@example.com"
-                          type="email" />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-12 col-md-2 col-form-label">Correo</label>
-                      <div class="col-sm-12 col-md-10">
-                        <input
-                          class="form-control"
-                          value="bootstrap@example.com"
-                          type="email" />
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div class="card-box mb-30">
           <div class="pd-20">
             <h4
               class="text-blue h4 text-center text-uppercase text-secondary">
               Clientes
             </h4>
+            <div class="text-right">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#Medium-modal" id="btnModalNuevoCliente">
+                <i class="icon-copy fi-plus"></i>
+              </button>
+            </div>
           </div>
           <div class="pb-20">
             <table id="tabClientes"
@@ -467,16 +410,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <input type="hidden" id="id">
+          <form id="formClientes">
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
               <div class="col-sm-12 col-md-10">
-                <input
-                id="nombre" name="nombre"
+                <input id="nombre" name="nombre"
                   class="form-control"
-                  type="text"
-                  placeholder="Johnny Brown" />
+                  type="text" />
               </div>
             </div>
             <div class="form-group row">
@@ -484,8 +424,7 @@
               <div class="col-sm-12 col-md-10">
                 <input id="apellido" name="apellido"
                   class="form-control"
-                  placeholder="Search Here"
-                  type="search" />
+                  type="text" />
               </div>
             </div>
             <div class="form-group row">
@@ -493,8 +432,7 @@
               <div class="col-sm-12 col-md-10">
                 <input id="telefono" name="telefono"
                   class="form-control"
-                  value="bootstrap@example.com"
-                  type="email" />
+                  type="tel" />
               </div>
             </div>
             <div class="form-group row">
@@ -502,7 +440,6 @@
               <div class="col-sm-12 col-md-10">
                 <input id="email" name="email"
                   class="form-control"
-                  value="bootstrap@example.com"
                   type="email" />
               </div>
             </div>
@@ -543,6 +480,11 @@
   <script src="frontend/vendors/scripts/datatable-setting.js"></script>
 
   <!-- Personalizado -->
+
+
+
+  <script src="frontend/src/scripts/moment.js"></script>
+  <script src="frontend/src/plugins/sweetalert2/sweetalert2.all.js"></script>
   <script src="frontend/vendors/scripts/clientes/main.js"></script>
 </body>
 

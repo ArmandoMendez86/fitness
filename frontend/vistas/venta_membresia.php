@@ -368,13 +368,13 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-end mb-3">
 
-              
+
                     <span
-                    data-toggle="tooltip" data-placement="top" title="" data-original-title="Registrar cliente"
+                      data-toggle="tooltip" data-placement="top" title="" data-original-title="Registrar cliente"
                       class="icon-copy ti-save pr-3"
                       id="nuevoCliente">
                     </span>
-                      <span
+                    <span
                       data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar registro"
                       class="icon-copy ti-close"
                       id="cancelarNuevoCliente">
