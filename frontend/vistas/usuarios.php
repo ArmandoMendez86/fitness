@@ -4,7 +4,7 @@
 <head>
   <!-- Basic Page Info -->
   <meta charset="utf-8" />
-  <title>Membresías</title>
+  <title>Usuarios</title>
 
   <!-- Site favicon -->
 
@@ -29,6 +29,14 @@
     rel="stylesheet"
     type="text/css"
     href="frontend/vendors/styles/icon-font.min.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="frontend/src/plugins/datatables/css/dataTables.bootstrap4.min.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="frontend/src/plugins/datatables/css/responsive.bootstrap4.min.css" />
   <link rel="stylesheet" type="text/css" href="frontend/vendors/styles/style.css" />
 
 
@@ -350,65 +358,129 @@
     <div class="pd-ltr-20 xs-pd-20-10">
       <div class="min-height-200px">
         <div class="footer-wrap pd-20 mb-20 card-box">
-          Gestiona tus Membresías
+          Gestiona tus usuarios
         </div>
 
-        <div class="container px-0">
+        <!-- Export Datatable start -->
+        <div class="card-box mb-30">
+          <div class="pd-20">
 
-          <div class="row mt-5">
-            <div class="col-md-4 mb-30">
-              <div class="card-box pricing-card mt-30 mb-30">
-                <div class="pricing-icon">
-                  <img src="frontend/vendors/images/icon-Cash.png" alt="" />
-                </div>
-                <div class="price-title">Día</div>
-                <div class="pricing-price"><sup>$</sup>49<sub>/mo</sub></div>
-                <div class="text">
-                  Card servicing<br />
-                  for 1month
-                </div>
-                <div class="cta">
-                  <a href="#" class="btn btn-primary btn-rounded btn-lg">Order Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-30">
-              <div class="card-box pricing-card mt-30 mb-30">
-                <div class="pricing-icon">
-                  <img src="frontend/vendors/images/icon-debit.png" alt="" />
-                </div>
-                <div class="price-title">Semana</div>
-                <div class="pricing-price"><sup>$</sup>199<sub>/mo</sub></div>
-                <div class="text">
-                  Card servicing<br />
-                  for 6month
-                </div>
-                <div class="cta">
-                  <a href="#" class="btn btn-primary btn-rounded btn-lg">Order Now</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-30">
-              <div class="card-box pricing-card mt-30 mb-30">
-                <div class="pricing-icon">
-                  <img src="frontend/vendors/images/icon-online-wallet.png" alt="" />
-                </div>
-                <div class="price-title">Mes</div>
-                <div class="pricing-price"><sup>$</sup>599<sub>/yr</sub></div>
-                <div class="text">
-                  Card servicing<br />
-                  for 1year
-                </div>
-                <div class="cta">
-                  <a href="#" class="btn btn-primary btn-rounded btn-lg">Order Now</a>
-                </div>
-              </div>
-            </div>
           </div>
-
-
+          <div class="pb-20">
+            <table
+              class="table hover multiple-select-row data-table-export nowrap">
+              <thead>
+                <tr>
+                  <th class="table-plus datatable-nosort">Name</th>
+                  <th>Age</th>
+                  <th>Office</th>
+                  <th>Address</th>
+                  <th>Start Date</th>
+                  <th>Salart</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-plus">Gloria F. Mead</td>
+                  <td>25</td>
+                  <td>Sagittarius</td>
+                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Gemini</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>20</td>
+                  <td>Gemini</td>
+                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Sagittarius</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>25</td>
+                  <td>Gemini</td>
+                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>20</td>
+                  <td>Sagittarius</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>18</td>
+                  <td>Gemini</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Sagittarius</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Sagittarius</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Gemini</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Gemini</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+                <tr>
+                  <td class="table-plus">Andrea J. Cagle</td>
+                  <td>30</td>
+                  <td>Gemini</td>
+                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
+                  <td>29-03-2018</td>
+                  <td>$162,700</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-
+        <!-- Export Datatable End -->
       </div>
     </div>
   </div>
@@ -418,7 +490,20 @@
   <script src="frontend/vendors/scripts/script.min.js"></script>
   <script src="frontend/vendors/scripts/process.js"></script>
   <script src="frontend/vendors/scripts/layout-settings.js"></script>
-
+  <script src="frontend/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+  <!-- buttons for Export datatable -->
+  <script src="frontend/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/buttons.print.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/buttons.html5.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/buttons.flash.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/pdfmake.min.js"></script>
+  <script src="frontend/src/plugins/datatables/js/vfs_fonts.js"></script>
+  <!-- Datatable Setting js -->
+  <script src="frontend/vendors/scripts/datatable-setting.js"></script>
 </body>
 
 </html>

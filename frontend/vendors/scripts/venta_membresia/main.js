@@ -26,6 +26,7 @@ btnCancelarCliente.addEventListener("click", hanldeCancelarAgregarCliente);
 
 /* Funciones */
 async function cargarClientes() {
+  listaClientes.innerHTML = "";
   const clientes = await obtenerClientes();
   let defauloption = document.createElement("option");
   defauloption.value = "";
@@ -200,6 +201,7 @@ async function enviarDataCliente(data) {
       document.getElementById("faq1").classList.remove("show");
       document.querySelector("#btnAcordion").classList.add("collapsed");
       data = {};
+      cargarClientes();
     }
   } catch (error) {
     console.log("Error en la solicitud: " + error);

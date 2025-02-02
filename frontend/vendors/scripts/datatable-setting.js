@@ -23,75 +23,7 @@ $("document").ready(function () {
     },
   });
 
-  $(".data-table-export").DataTable({
-    scrollCollapse: true,
-    autoWidth: false,
-    responsive: true,
-    columnDefs: [
-      {
-        targets: "datatable-nosort",
-        orderable: false,
-      },
-    ],
-    lengthMenu: [
-      [10, 25, 50, -1],
-      [10, 25, 50, "All"],
-    ],
-    language: {
-      info: "_START_-_END_ of _TOTAL_ entries",
-      searchPlaceholder: "Search",
-      paginate: {
-        next: '<i class="ion-chevron-right"></i>',
-        previous: '<i class="ion-chevron-left"></i>',
-      },
-    },
-    dom: "Bfrtp",
-    buttons: ["copy", "csv", "pdf", "print"],
-    ajax: {
-      url: "backend/clientes/controladores/clientes.controlador.php?uri=clientes",
-      type: "GET",
-      dataType: "json",
-    },
-    language: {
-      url: "frontend/vendors/scripts/mx.json",
-    },
-    lengthMenu: [
-      [10, 15, 20, -1],
-      [10, 15, 20, "Todos"],
-    ],
-    /* order: [[7, "desc"]], */
-    columns: [
-      {
-        data: "id",
-        visible: false,
-      },
-      {
-        data: "nombre",
-        visible: true,
-      },
-      {
-        data: "apellido",
-      },
-      {
-        data: "email",
-      },
-      {
-        data: "telefono",
-      },
-      {
-        data: null,
-        className: "dt-center",
-        render: function (data, type, row) {
-          // Agregar función render
-          return `<div class="d-flex justify-content-center">
-					<button title="Ticket" type="button" class="editar btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#Medium-modal"><i class="fa fa-edit"></i></button>
-					<button title="Eliminar" type="button" class="eliminar btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
-				</div>`;
-        },
-        orderable: false,
-      },
-    ],
-  });
+ 
 
   $("#tabDetalleMembresias").DataTable({
     scrollCollapse: true,
@@ -117,7 +49,7 @@ $("document").ready(function () {
       [10, 15, 20, -1],
       [10, 15, 20, "Todos"],
     ],
-    /* order: [[7, "desc"]], */
+    order: [[6, "desc"]],
     columns: [
       {
         data: "id",
@@ -163,7 +95,7 @@ $("document").ready(function () {
     ],
     footerCallback: function (row, data, start, end, display) {
       let api = this.api();
-  
+
       let total = api
         .column(8, { page: "current" })
         .data()
@@ -173,7 +105,7 @@ $("document").ready(function () {
           const valorB = parseFloat(b) || 0;
           return valorA + valorB;
         }, 0);
-  
+
       let formato = total.toLocaleString("es-MX", {
         style: "currency",
         currency: "MXN",

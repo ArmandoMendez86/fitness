@@ -370,7 +370,7 @@
               Clientes
             </h4>
             <div class="text-right">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#Medium-modal" id="btnModalNuevoCliente">
+              <button class="btn btn-dark" data-toggle="modal" data-target="#Medium-modal" id="btnModalNuevoCliente">
                 <i class="icon-copy fi-plus"></i>
               </button>
             </div>
@@ -378,13 +378,14 @@
           <div class="pb-20">
             <table id="tabClientes"
               class="table hover data-table-export">
-              <thead>
+              <thead class="text-uppercase">
                 <tr>
                   <th>id</th>
                   <th>nombre</th>
                   <th>apellido</th>
                   <th>email</th>
                   <th>telefono</th>
+                  <th>registro</th>
                   <th>acciones</th>
                 </tr>
               </thead>
@@ -402,15 +403,14 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="myLargeModalLabel">
-            Large modal
-          </h4>
+          <h4 class="modal-title" id="myLargeModalLabel"></h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             ×
           </button>
         </div>
         <div class="modal-body">
           <form id="formClientes">
+            <input type="hidden" id="id" name="id">
             <div class="form-group row">
               <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
               <div class="col-sm-12 col-md-10">
@@ -446,10 +446,10 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarNuevoCliente">
             Close
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" id="nuevoCliente">
             Save changes
           </button>
         </div>
@@ -480,9 +480,6 @@
   <script src="frontend/vendors/scripts/datatable-setting.js"></script>
 
   <!-- Personalizado -->
-
-
-
   <script src="frontend/src/scripts/moment.js"></script>
   <script src="frontend/src/plugins/sweetalert2/sweetalert2.all.js"></script>
   <script src="frontend/vendors/scripts/clientes/main.js"></script>

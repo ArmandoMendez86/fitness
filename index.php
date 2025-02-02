@@ -27,6 +27,7 @@ $routes = [
     'membresias' => 'frontend/vistas/membresias.php',
     'venta_membresia' => 'frontend/vistas/venta_membresia.php',
     'detalle_membresias' => 'frontend/vistas/detalle_membresias.php',
+    'usuarios' => 'frontend/vistas/usuarios.php',
    
 
 ];

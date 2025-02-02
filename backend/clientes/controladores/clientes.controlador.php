@@ -36,15 +36,15 @@ class ClientesControlador
         echo json_encode(['data' => $clientesActivos]);
     } */
 
-  /*   public function update($data)
+    public function actualizarCliente($data)
     {
-        $this->clientes->update($data['id'], $data['nombre'], $data['correo'], $data['telefono'], $data['estado']);
+        $this->clientes->actualizarCliente($data);
         echo json_encode(['status' => 'ok']);
-    } */
+    }
 
-    public function delete($id)
+    public function delete($data)
     {
-        $this->clientes->delete($id);
+        $this->clientes->delete($data);
         echo json_encode(['status' => 'ok']);
     }
 }
@@ -74,11 +74,7 @@ switch ($method) {
         } */
 
     case 'POST':
-      /*   if ($data[0]['uri'] === 'actualizarcliente') {
-            unset($data['uri']);
-            $controller->update($data);
-            break;
-        } */
+     
 
         if ($data[0]['uri'] === 'crearcliente' ) {
             $controller->crearCliente($data);
@@ -90,12 +86,15 @@ switch ($method) {
             break;
         }
 
-       /*  if ($data['uri'] === 'eliminar' && isset($data['id'])) {
-            unset($data['uri']);
-            $id = $data['id'];
-            $controller->delete($id);
+           if ($data[0]['uri'] === 'actualizarcliente') {
+            $controller->actualizarCliente($data);
             break;
-        } */
+        }
+
+        if ($data[0]['uri'] === 'eliminarcliente') {
+            $controller->delete($data);
+            break;
+        }
 
         // Si no se cumple ninguna de las anteriores, error
         http_response_code(400);

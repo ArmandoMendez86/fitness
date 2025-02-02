@@ -44,8 +44,6 @@ class ClientesModelo
     }
 
 
-
-
     /*     public function clientesActivos()
     {
         $sql = "SELECT * FROM clientes WHERE estado = 1";
@@ -54,23 +52,29 @@ class ClientesModelo
     } */
 
 
-    public function update($id, $nombre, $correo, $telefono, $estado)
+    public function actualizarCliente($data)
     {
-        $sql = "UPDATE clientes SET nombre = :nombre, correo = :correo, telefono = :telefono, estado = :estado WHERE id = :id";
+        $sql = "UPDATE clientes SET nombre = :nombre, apellido = :apellido, email = :email, telefono = :telefono WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            ':id' => $id,
-            ':nombre' => $nombre,
-            ':correo' => $correo,
-            ':telefono' => $telefono,
-            ':estado' => $estado
-        ]);
+
+        foreach ($data as $registro) {
+            $stmt->execute([
+                ':id' => $registro['id'],
+                ':nombre' => $registro['nombre'],
+                ':apellido' => $registro['apellido'],
+                ':email' => $registro['email'],
+                ':telefono' => $registro['telefono'],
+            ]);
+        }
     }
 
-    public function delete($id)
+    public function delete($data)
     {
         $sql = "DELETE FROM clientes WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':id' => $id]);
+
+        foreach ($data as $registro) {
+            $stmt->execute([':id' => $registro['id']]);
+        }
     }
 }
