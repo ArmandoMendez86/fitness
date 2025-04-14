@@ -1,4 +1,4 @@
-let tablaClientesDatatable = $(".data-table-export").DataTable({
+let tabUsuarios = $(".tabUsuarios").DataTable({
   scrollCollapse: true,
   autoWidth: false,
   responsive: true,
@@ -23,7 +23,7 @@ let tablaClientesDatatable = $(".data-table-export").DataTable({
   dom: "Bfrtp",
   buttons: ["copy", "csv", "pdf", "print"],
   ajax: {
-    url: "backend/clientes/controladores/clientes.controlador.php?uri=clientes",
+    url: "backend/usuarios/controladores/usuarios.controlador.php?uri=usuarios",
     type: "GET",
     dataType: "json",
   },
@@ -34,7 +34,7 @@ let tablaClientesDatatable = $(".data-table-export").DataTable({
     [10, 15, 20, -1],
     [10, 15, 20, "Todos"],
   ],
-  order: [[5, "desc"]],
+  order: [[6, "desc"]],
   columns: [
     {
       data: "id",
@@ -54,7 +54,10 @@ let tablaClientesDatatable = $(".data-table-export").DataTable({
       data: "telefono",
     },
     {
-      data: "fecha_registro",
+      data: "rol",
+    },
+    {
+      data: "registro",
       render: function (data, type, row) {
         if (type == "display") {
           return moment(data).format("DD/MM/YY hh:mm A");
@@ -68,9 +71,9 @@ let tablaClientesDatatable = $(".data-table-export").DataTable({
       render: function (data, type, row) {
         // Agregar función render
         return `<div class="d-flex justify-content-center">
-        <button title="Ticket" type="button" class="editar btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#Medium-modal"><i class="fa fa-edit"></i></button>
-        <button title="Eliminar" type="button" class="eliminar btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
-      </div>`;
+          <button title="Ticket" type="button" class="editar btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#Medium-modal"><i class="fa fa-edit"></i></button>
+          <button title="Eliminar" type="button" class="eliminar btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+        </div>`;
       },
       orderable: false,
     },
@@ -78,28 +81,28 @@ let tablaClientesDatatable = $(".data-table-export").DataTable({
 });
 
 /* Variables */
-const tablaClientes = document.querySelector("#tabClientes");
+const tablaUsuarios = document.querySelector("#tabUsuarios");
 
 /* Formulario clientes */
-const formularioClientes = document.querySelector("#formClientes");
-const nuevoCliente = document.querySelector("#nuevoCliente");
-const btnCancelarCliente = document.querySelector("#cancelarNuevoCliente");
+const formularioUsuarios = document.querySelector("#formUsuarios");
+const nuevoUsuario = document.querySelector("#nuevoUsuario");
+const btnCancelarUsuario = document.querySelector("#cancelarNuevoUsuario");
 
 /* Boton de modal nuevo cliente */
-const ModalNuevoCliente = document.querySelector("#btnModalNuevoCliente");
+const ModalNuevoUsuario = document.querySelector("#btnModalNuevoUsuario");
 
 /* Datos para enviar */
 let data = {};
 
 /* Eventos */
 
-tablaClientes.addEventListener("click", (e) => {
+tablaUsuarios.addEventListener("click", (e) => {
   let editar = e.target.closest(".editar");
   let eliminar = e.target.closest(".eliminar");
 
   if (editar) {
     let row = editar.closest("tr");
-    let rowData = $("#tabClientes").DataTable().row(row).data();
+    let rowData = $("#tabUsuarios").DataTable().row(row).data();
     for (const key in rowData) {
       if (rowData.hasOwnProperty(key)) {
         const input = document.getElementById(key);
@@ -109,12 +112,12 @@ tablaClientes.addEventListener("click", (e) => {
         }
       }
     }
-    document.querySelector("#myLargeModalLabel").textContent = "Editar Cliente";
+    document.querySelector("#myLargeModalLabel").textContent = "Editar Usuario";
   }
   if (eliminar) {
     let row = eliminar.closest("tr");
-    let rowData = $("#tabClientes").DataTable().row(row).data();
-    data.uri = "eliminarcliente";
+    let rowData = $("#tabUsuarios").DataTable().row(row).data();
+    data.uri = "eliminarusuario";
     data.id = rowData.id;
 
     Swal.fire({
@@ -128,15 +131,9 @@ tablaClientes.addEventListener("click", (e) => {
       cancelButtonText: "No!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Eliminado!",
-          text: "Registro eliminado.",
-          icon: "success",
-        });
-
-        enviarDataCliente(data).then((response) => {
+        enviarDataUsuario(data).then((response) => {
           if (response.status == "ok") {
-            tablaClientesDatatable.ajax.reload(null, true);
+            tabUsuarios.ajax.reload(null, true);
           }
         });
       }
@@ -144,29 +141,29 @@ tablaClientes.addEventListener("click", (e) => {
   }
 });
 
-ModalNuevoCliente.addEventListener("click", () => {
-  
-  formularioClientes.reset();
-  document.querySelector("#myLargeModalLabel").textContent = "Agregar Cliente";
+ModalNuevoUsuario.addEventListener("click", () => {
+  formularioUsuarios.reset();
+  document.querySelector("#myLargeModalLabel").textContent = "Agregar Usuario";
   //console.log("nuevo");
 });
 
-nuevoCliente.addEventListener("click", handleAgregarCliente);
-btnCancelarCliente.addEventListener("click", hanldeCancelarAgregarCliente);
+nuevoUsuario.addEventListener("click", handleAgregarUsuario);
+btnCancelarUsuario.addEventListener("click", hanldeCancelarAgregarUsuario);
 
 //Fuciones
-async function handleAgregarCliente() {
-  const formaData = new FormData(formularioClientes);
+async function handleAgregarUsuario() {
+  // console.log("guardando...");
+  const formaData = new FormData(formularioUsuarios);
   formaData.forEach((valor, clave) => {
     data[clave] = valor.trim().toLowerCase();
   });
 
-  if (data.nombre == "" || data.apellido == "") return;
+  if (data.nombre == "" || data.apellido == "" || data.rol == "") return;
 
   if (data.id != "") {
-    data.uri = "actualizarcliente";
+    data.uri = "actualizarusuario";
   } else {
-    data.uri = "verificarcliente";
+    data.uri = "verificarusuario";
     let existe = await verificarUsuario(data);
 
     if (existe.length > 0) {
@@ -177,12 +174,12 @@ async function handleAgregarCliente() {
       });
       return;
     } else {
-      data.uri = "crearcliente";
+      data.uri = "crearusuario";
+      data.registro = moment().format("YYYY-MM-DD h:mm:ss");
     }
   }
 
-
-  let confirmado = await enviarDataCliente(data);
+  let confirmado = await enviarDataUsuario(data);
   if (confirmado.status == "ok") {
     Swal.fire({
       position: "top-end",
@@ -191,31 +188,30 @@ async function handleAgregarCliente() {
       showConfirmButton: false,
       timer: 1500,
     });
-    formularioClientes.reset();
-    tablaClientesDatatable.ajax.reload(null, true);
+    formularioUsuarios.reset();
+    tabUsuarios.ajax.reload(null, true);
     $("#Medium-modal").modal("hide");
-    for (const key in data) {
+    for (let key in data) {
       delete data[key];
     }
-
-    console.log(data)
+    console.log(data);
   }
 }
 
-function hanldeCancelarAgregarCliente() {
-  formularioClientes.reset();
+function hanldeCancelarAgregarUsuario() {
+  formularioUsuarios.reset();
 }
 
-async function enviarDataCliente(data) {
+async function enviarDataUsuario(data) {
   try {
-    const agregarCliente = await fetch(
-      "backend/clientes/controladores/clientes.controlador.php",
+    const agregarUsuario = await fetch(
+      "backend/usuarios/controladores/usuarios.controlador.php",
       {
         method: "POST",
         body: JSON.stringify([data]),
       }
     );
-    const respuesta = await agregarCliente.json();
+    const respuesta = await agregarUsuario.json();
     if (respuesta.status == "ok") {
       return { status: "ok" };
     }
@@ -227,7 +223,7 @@ async function enviarDataCliente(data) {
 async function verificarUsuario(data) {
   try {
     const usuario = await fetch(
-      "backend/clientes/controladores/clientes.controlador.php",
+      "backend/usuarios/controladores/usuarios.controlador.php",
       {
         method: "POST",
         body: JSON.stringify([data]),

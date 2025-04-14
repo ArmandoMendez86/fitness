@@ -357,130 +357,118 @@
   <div class="main-container">
     <div class="pd-ltr-20 xs-pd-20-10">
       <div class="min-height-200px">
-        <div class="footer-wrap pd-20 mb-20 card-box">
-          Gestiona tus usuarios
-        </div>
-
         <!-- Export Datatable start -->
         <div class="card-box mb-30">
           <div class="pd-20">
-
+            <h4
+              class="text-blue h4 text-center text-uppercase text-secondary">
+              Usuarios
+            </h4>
+            <div class="text-right">
+              <button class="btn btn-dark" data-toggle="modal" data-target="#Medium-modal" id="btnModalNuevoUsuario">
+                <i class="icon-copy fi-plus"></i>
+              </button>
+            </div>
           </div>
+
           <div class="pb-20">
-            <table
-              class="table hover multiple-select-row data-table-export nowrap">
+            <table id="tabUsuarios"
+              class="table hover tabUsuarios">
               <thead>
                 <tr>
-                  <th class="table-plus datatable-nosort">Name</th>
-                  <th>Age</th>
-                  <th>Office</th>
-                  <th>Address</th>
-                  <th>Start Date</th>
-                  <th>Salart</th>
+                  <th>id</th>
+                  <th>nombre</th>
+                  <th>apellido</th>
+                  <th>email</th>
+                  <th>telefono</th>
+                  <th>rol</th>
+                  <th>registro</th>
+                  <th>acciones</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="table-plus">Gloria F. Mead</td>
-                  <td>25</td>
-                  <td>Sagittarius</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>20</td>
-                  <td>Gemini</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>25</td>
-                  <td>Gemini</td>
-                  <td>2829 Trainer Avenue Peoria, IL 61602</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>20</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>18</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Sagittarius</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td class="table-plus">Andrea J. Cagle</td>
-                  <td>30</td>
-                  <td>Gemini</td>
-                  <td>1280 Prospect Valley Road Long Beach, CA 90802</td>
-                  <td>29-03-2018</td>
-                  <td>$162,700</td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
         </div>
         <!-- Export Datatable End -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="Medium-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myLargeModalLabel"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formUsuarios">
+            <input type="hidden" id="id" name="id">
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Nombre</label>
+              <div class="col-sm-12 col-md-10">
+                <input id="nombre" name="nombre"
+                  class="form-control"
+                  type="text" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Apellido</label>
+              <div class="col-sm-12 col-md-10">
+                <input id="apellido" name="apellido"
+                  class="form-control"
+                  type="text" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Teléfono</label>
+              <div class="col-sm-12 col-md-10">
+                <input id="telefono" name="telefono"
+                  class="form-control"
+                  type="tel" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Correo</label>
+              <div class="col-sm-12 col-md-10">
+                <input id="email" name="email"
+                  class="form-control"
+                  type="email" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Rol</label>
+              <div class="col-sm-12 col-md-10">
+                <select class="form-control" name="rol" id="rol">
+                  <option selected value="">Elige tipo de rol</option>
+                  <option value="admin">admin</option>
+                  <option value="recepcion">recepcion</option>
+                  <option value="instructor">instructor</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-2 col-form-label">Clave</label>
+              <div class="col-sm-12 col-md-10">
+                <input id="password" name="password"
+                  class="form-control"
+                  type="password" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarNuevoUsuario">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-primary" id="nuevoUsuario">
+            Guardar
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -504,6 +492,11 @@
   <script src="frontend/src/plugins/datatables/js/vfs_fonts.js"></script>
   <!-- Datatable Setting js -->
   <script src="frontend/vendors/scripts/datatable-setting.js"></script>
+
+  <!-- Personalizado -->
+  <script src="frontend/src/scripts/moment.js"></script>
+  <script src="frontend/src/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <script src="frontend/vendors/scripts/usuarios/main.js"></script>
 </body>
 
 </html>

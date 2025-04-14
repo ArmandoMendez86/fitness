@@ -44,14 +44,6 @@ class ClientesModelo
     }
 
 
-    /*     public function clientesActivos()
-    {
-        $sql = "SELECT * FROM clientes WHERE estado = 1";
-        $stmt = $this->pdo->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } */
-
-
     public function actualizarCliente($data)
     {
         $sql = "UPDATE clientes SET nombre = :nombre, apellido = :apellido, email = :email, telefono = :telefono WHERE id = :id";

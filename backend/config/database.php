@@ -8,7 +8,7 @@ class Database
     private function __construct()
     {
         $host = 'localhost';
-        $dbname = 'gym';
+        $dbname = 'bd_gimnasio';
         $username = 'root';
         $password = 'linux';
         /* $host = 'localhost';

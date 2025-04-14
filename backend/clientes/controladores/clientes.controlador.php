@@ -68,10 +68,6 @@ switch ($method) {
             $controller->obtenerClientes();
             break;
         }
-      /*   if ($uri === 'clientes_act') {
-            $controller->clientesActivos();
-            break;
-        } */
 
     case 'POST':
      

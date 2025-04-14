@@ -443,14 +443,17 @@
                   type="email" />
               </div>
             </div>
+            <div id="spinner" class="spinner-border text-success d-none text-center" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarNuevoCliente">
-            Close
+            Cancelar
           </button>
           <button type="button" class="btn btn-primary" id="nuevoCliente">
-            Save changes
+            Guardar
           </button>
         </div>
       </div>
